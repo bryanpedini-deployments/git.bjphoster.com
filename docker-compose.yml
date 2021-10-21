@@ -20,7 +20,7 @@ services:
       - traefik.http.routers.http-${TRAEFIK_ROUTER}.rule=Host(`${TRAEFIK_HOST}`)
       ### Section HTTPS
       - traefik.http.routers.https-${TRAEFIK_ROUTER}.entrypoints=https
-      - traefik.https.services.${TRAEFIK_SERVICE}.loadbalancer.server.port=3000
+      - traefik.http.services.${TRAEFIK_SERVICE}.loadbalancer.server.port=3000
       # configure the exposed service
       - traefik.http.routers.https-${TRAEFIK_ROUTER}.rule=Host(`${TRAEFIK_HOST}`)
       # of course, enable TLS and it's certificate provider
