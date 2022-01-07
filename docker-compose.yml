@@ -31,9 +31,10 @@ services:
       - traefik-proxy
     restart: unless-stopped
     volumes:
-      - ./gitea_data:/data
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+      - ./gitea_data:/data
+      - ${GIT_HOMEDIR}/.ssh:/data/git/.ssh
     ports:
       - 3000:3000
   db:
